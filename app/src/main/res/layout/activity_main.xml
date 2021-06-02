@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.androidapp">
-        <uses-permission android:name="android.permission.INTERNET"/>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        tools:context=".Views.MainActivity"
+        android:orientation="vertical">
+        <EditText
 
-    <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/Theme.AndroidApp">
-        <activity android:name=".Views.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ip"
+                android:layout_weight="1"
+                android:id="@+id/ip"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-    </application>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/port"
+                android:layout_weight="1"
+                android:id="@+id/port"/>
+    <Button
+            android:layout_width="116dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/connect"/>
+    <com.example.androidapp.Views.joystick
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="bottom"
+            android:id="@+id/joystick"
+            android:layout_weight="1"/>
+</LinearLayout>
 
-</manifest>
