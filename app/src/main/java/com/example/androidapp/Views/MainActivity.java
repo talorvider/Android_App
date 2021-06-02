@@ -16,13 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         js = new joystick(this);
         setContentView(R.layout.activity_main);
-
         //define on_change function
-        js.on_change =(a,e)->{
+        js.call_back =(a,e)->{
             vm.setAileron(a);
             //vm.setElevator(e);
         };
-        //setContentView(js);
 
     }
 

@@ -15,22 +15,33 @@ import androidx.annotation.NonNull;
 import java.util.jar.Attributes;
 
 public class joystick extends SurfaceView implements SurfaceHolder.Callback, View.OnTouchListener {
-    public IJoystik on_change;
 
+    //joystick interface
+     interface IJoystik {
+        void onChange(double a, double e);
+    }
+    public IJoystik call_back;
     private float xCen;
     private float yCen;
     private float radiusBase;
     private float radiusH;
+
     //constructor for joystick
     public joystick(Context context) {
         super(context);
         getHolder().addCallback(this);
         setOnTouchListener(this);
+        if(context instanceof IJoystik){
+            call_back = (IJoystik) context;
+        }
     }
     public joystick(Context context, AttributeSet att, int style) {
         super(context, att, style);
         getHolder().addCallback(this);
         setOnTouchListener(this);
+        if(context instanceof IJoystik){
+            call_back = (IJoystik) context;
+        }
 
     }
 
@@ -38,6 +49,9 @@ public class joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
         super(context, att);
         getHolder().addCallback(this);
         setOnTouchListener(this);
+        if(context instanceof IJoystik){
+            call_back = (IJoystik) context;
+        }
 
     }
 
@@ -89,6 +103,8 @@ public class joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
                 if(disPlace < radiusBase){
                     // move the joystick to the new location
                     drawJoystick(e.getX(), e.getY());
+                    call_back.onChange(e.getX(), e.getY());
+
                 }
                 //if the touch is out of the joystick bounds
                 else {
@@ -97,11 +113,15 @@ public class joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
                     float newX = xCen + (e.getX() - xCen) * proportion;
                     float newY = yCen + (e.getY() - yCen) * proportion;
                     drawJoystick(newX, newY);
+                    call_back.onChange(newX, newY);
+
                 }
             }
             else {
                 //return the joystick to center
                 drawJoystick(xCen, yCen);
+                call_back.onChange(xCen, yCen);
+
             }
         }
         return true;
