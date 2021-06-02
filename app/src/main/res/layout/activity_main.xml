@@ -10,8 +10,8 @@
         android:paddingRight="16dp"
         tools:context=".Views.MainActivity"
         android:orientation="vertical">
-        <EditText
 
+        <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ip"
@@ -24,12 +24,14 @@
                 android:hint="@string/port"
                 android:layout_weight="1"
                 android:id="@+id/port"/>
+
     <Button
             android:layout_width="116dp"
             android:layout_height="8dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="@string/connect"/>
+
     <com.example.androidapp.Views.joystick
             android:layout_width="match_parent"
             android:layout_height="350dp"
