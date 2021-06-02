@@ -20,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
             vm.setAileron(a);
             //vm.setElevator(e);
         };
-        setContentView(R.layout.activity_main);
+        setContentView(js);
+
+        //setContentView(R.layout.activity_main);
     }
 
 }
