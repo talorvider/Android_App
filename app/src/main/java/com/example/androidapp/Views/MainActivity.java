@@ -15,14 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         js = new joystick(this);
+        setContentView(R.layout.activity_main);
+
         //define on_change function
         js.on_change =(a,e)->{
             vm.setAileron(a);
             //vm.setElevator(e);
         };
-        setContentView(js);
+        //setContentView(js);
 
-        //setContentView(R.layout.activity_main);
     }
 
 }
