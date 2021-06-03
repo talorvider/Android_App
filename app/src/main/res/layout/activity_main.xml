@@ -38,7 +38,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="@string/connect"
-                android:onClick="@{() -> viewmodel.serverConn()}"/>
+                android:onClick="sendMessage"
+                />
 
         <com.example.androidapp.views.Joystick
                 android:layout_width="match_parent"

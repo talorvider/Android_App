@@ -1,6 +1,7 @@
 package com.example.androidapp.views;
 
 import android.view.View;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
         vm.setAileron(a);
     }
     public void sendMessage(View view) {
+        EditText port_et = (EditText) findViewById(R.id.port);
+        String port = port_et.getText().toString();
+        vm.port = Integer.parseInt(port);
+        EditText ip_et = (EditText) findViewById(R.id.ip);
+        vm.ip = ip_et.getText().toString();
         vm.serverConn();
         // Do something in response to button click
     }

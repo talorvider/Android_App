@@ -7,6 +7,8 @@ import java.io.IOException;
 
 public class Viewmodel {
     private double aileron;
+    public String ip;
+    public int port;
     private FGModel model;
     private Joystick js;
     public Viewmodel() {
@@ -15,11 +17,8 @@ public class Viewmodel {
 
     public void serverConn() {
         try {
-            //String ip,String port
-            String ip = "1.1.1.1";
-            String port = "4600";
             //get port and ip from user
-            model.connectFG(ip, Integer.parseInt(port));
+            model.connectFG(ip, port);
         } catch (IOException e) {
             e.printStackTrace();
         }
