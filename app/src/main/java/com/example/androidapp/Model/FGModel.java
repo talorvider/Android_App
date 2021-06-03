@@ -1,8 +1,5 @@
 package com.example.androidapp.Model;
 
-import com.example.androidapp.Views.joystick;
-
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;

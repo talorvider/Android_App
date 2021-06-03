@@ -1,4 +1,4 @@
-package com.example.androidapp.Views;
+package com.example.androidapp.views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,9 +12,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import androidx.annotation.NonNull;
 
-import java.util.jar.Attributes;
-
-public class joystick extends SurfaceView implements SurfaceHolder.Callback, View.OnTouchListener {
+public class Joystick extends SurfaceView implements SurfaceHolder.Callback, View.OnTouchListener {
 
     //joystick interface
      interface IJoystik {
@@ -27,7 +25,7 @@ public class joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
     private float radiusH;
 
     //constructor for joystick
-    public joystick(Context context) {
+    public Joystick(Context context) {
         super(context);
         getHolder().addCallback(this);
         setOnTouchListener(this);
@@ -35,7 +33,7 @@ public class joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
             call_back = (IJoystik) context;
         }
     }
-    public joystick(Context context, AttributeSet att, int style) {
+    public Joystick(Context context, AttributeSet att, int style) {
         super(context, att, style);
         getHolder().addCallback(this);
         setOnTouchListener(this);
@@ -45,7 +43,7 @@ public class joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
 
     }
 
-    public joystick(Context context, AttributeSet att) {
+    public Joystick(Context context, AttributeSet att) {
         super(context, att);
         getHolder().addCallback(this);
         setOnTouchListener(this);
