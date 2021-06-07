@@ -1,5 +1,6 @@
 package com.example.androidapp.views;
 
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,51 +13,33 @@ import com.example.androidapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements Joystick.IJoystik {
     private Viewmodel vm;
-    private FGModel model;
     private Joystick js;
     private ActivityMainBinding binding;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         js = new Joystick(this);
         vm = new Viewmodel();
         binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setViewmodel(vm);
-
-
-
-
-        /*// insert to botom func
-        EditText port_et = (EditText) findViewById(R.id.port);
-        String port = port_et.getText().toString();
-        vm.port = Integer.parseInt(port);
-        EditText ip_et = (EditText) findViewById(R.id.ip);
-        vm.ip = ip_et.getText().toString();*/
-
-        //define on_change function
-       // js.call_back =(a,e)->{
-        //    vm.setAileron(a);
-            //vm.setElevator(e);
-        //};
-
+        View v = findViewById(R.id.joystick);
+        double h = v.getHeight();
+        double w = v.getWidth();
+        float radiusBase = Math.min(v.getWidth(), v.getHeight()) / 3;
+        vm.setxCen(js.getxCen());
+        vm.setyCen(js.getyCen());
+        vm.setbRad(radiusBase);
     }
 
 
     @Override
     public void onChange(double a, double e) {
+        //update x,y center and radius
+
         vm.setAileron(a);
+        vm.setElevator(e);
     }
-    /*public void sendMessage(View view) {
-        EditText port_et = (EditText) findViewById(R.id.port);
-        String port = port_et.getText().toString();
-        vm.port = Integer.parseInt(port);
-        EditText ip_et = (EditText) findViewById(R.id.ip);
-        vm.ip = ip_et.getText().toString();
-        vm.serverConn();
-        // Do something in response to button click
-    }*/
+
 }

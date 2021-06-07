@@ -16,7 +16,7 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
 
     //joystick interface
      interface IJoystik {
-        void onChange(double a, double e);
+         void onChange(double a, double e);
     }
     public IJoystik call_back;
     private float xCen;
@@ -123,5 +123,17 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
             }
         }
         return true;
+    }
+
+    public float getxCen() {
+        return xCen;
+    }
+
+    public float getyCen() {
+        return yCen;
+    }
+
+    public float getRadiusBase() {
+        return radiusBase;
     }
 }

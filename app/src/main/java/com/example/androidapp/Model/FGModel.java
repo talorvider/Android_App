@@ -8,19 +8,33 @@ import java.util.concurrent.Executors;
 
 public class FGModel {
     private ExecutorService pool;
-    private int port;
-    private String ip;
     private Socket fg;
     private PrintWriter out;
-    public FGModel () {
+    private float xCen;
+    private float yCen;
+    private float bRad;
+
+    public FGModel() {
         //initialize the thread pool
         pool = Executors.newSingleThreadExecutor();
     }
-        //content to server
+
+    //content to server
     public void connectFG(String ip, int port) throws IOException {
-        pool.execute(new Connect(ip, port,fg));
-        //wrap the OutputStream
-        out=new PrintWriter(fg.getOutputStream(),true);
+        pool.execute(new Connect(ip, port,fg, out));
+
+    }
+
+    public void calcElevator(double e){
+        String task_str = "elevator";
+        double corr_elevator = e/bRad - yCen;
+        pool.execute(new Task(task_str, corr_elevator, out));
+    }
+
+    public void calcAileron(double a, float xCen, float bRad) {
+        String task_str = "aileron";
+        double corr_aileron = a/bRad - xCen;
+        pool.execute(new Task(task_str, corr_aileron, out));
     }
 }
 

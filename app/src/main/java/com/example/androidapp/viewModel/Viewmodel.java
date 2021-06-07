@@ -8,12 +8,17 @@ import com.example.androidapp.views.Joystick;
 import java.io.IOException;
 
 public class Viewmodel extends BaseObservable {
-    private double aileron;
+
+    private float xCen;
+    private float yCen;
+    private float bRad;
     private String ip;
     private String port;
     private FGModel model;
-    private Joystick js;
+
+
     public Viewmodel() {
+        model = new FGModel();
     }
 
     public void setIp(String ip) {
@@ -43,7 +48,24 @@ public class Viewmodel extends BaseObservable {
     }
 
     public void setAileron(double a){
-        aileron = a;
+
+        model.calcAileron(a, xCen, bRad);
+
     }
 
+    public void setElevator(double e) {
+        model.calcElevator(e);
+    }
+
+    public void setbRad(float bRad) {
+        this.bRad = bRad;
+    }
+
+    public void setxCen(float xCen) {
+        this.xCen = xCen;
+    }
+
+    public void setyCen(float yCen) {
+        this.yCen = yCen;
+    }
 }
