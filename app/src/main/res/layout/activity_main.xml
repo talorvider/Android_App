@@ -23,14 +23,17 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/ip"
                     android:layout_weight="1"
-                    android:id="@+id/ip"/>
+                    android:id="@+id/ip"
+                    android:text="@={viewmodel.ip}"/>
 
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/port"
                     android:layout_weight="1"
-                    android:id="@+id/port"/>
+                    android:id="@+id/port"
+                    android:text="@={viewmodel.port}"
+            />
 
         <Button
                 android:layout_width="116dp"
@@ -38,7 +41,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="@string/connect"
-                android:onClick="sendMessage"
+                android:onClick="@{() -> viewmodel.serverConn()}"
                 />
 
         <com.example.androidapp.views.Joystick

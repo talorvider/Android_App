@@ -14,16 +14,19 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
     private Viewmodel vm;
     private FGModel model;
     private Joystick js;
+    private ActivityMainBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         js = new Joystick(this);
         vm = new Viewmodel();
-        ActivityMainBinding binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setViewmodel(new Viewmodel());
-        setContentView(R.layout.activity_main);
+        binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setViewmodel(vm);
+
 
 
 
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
     public void onChange(double a, double e) {
         vm.setAileron(a);
     }
-    public void sendMessage(View view) {
+    /*public void sendMessage(View view) {
         EditText port_et = (EditText) findViewById(R.id.port);
         String port = port_et.getText().toString();
         vm.port = Integer.parseInt(port);
@@ -55,5 +58,5 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
         vm.ip = ip_et.getText().toString();
         vm.serverConn();
         // Do something in response to button click
-    }
+    }*/
 }
