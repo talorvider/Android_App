@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
     private Joystick js;
     private ActivityMainBinding binding;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +25,17 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
         vm = new Viewmodel();
         binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setViewmodel(vm);
-        View v = findViewById(R.id.joystick);
-        double h = v.getHeight();
-        double w = v.getWidth();
-        float radiusBase = Math.min(v.getWidth(), v.getHeight()) / 3;
-        vm.setxCen(js.getxCen());
-        vm.setyCen(js.getyCen());
-        vm.setbRad(radiusBase);
+        final View view = findViewById(R.id.joystick);
+
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                // initialize x and y center
+                vm.setxCen( view.getWidth()/2);
+                vm.setyCen( view.getHeight()/2);
+                vm.setbRad( Math.min(view.getWidth(), view.getHeight()) / 3);
+            }
+        });
     }
 
 
