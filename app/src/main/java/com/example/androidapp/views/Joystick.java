@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -54,10 +53,10 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
     }
 
     private void setupPosition(){
-        xCen = getWidth() / 2;
-        yCen = getHeight() / 2;
-        radiusBase = Math.min(getWidth(), getHeight()) / 3;
-        radiusH = Math.min(getWidth(), getHeight()) / 5;
+        xCen = (float)getWidth() / 2;
+        yCen = (float)getHeight() / 2;
+        radiusBase = (float)Math.min(getWidth(), getHeight()) / 3;
+        radiusH = (float)Math.min(getWidth(), getHeight()) / 5;
     }
     private void drawJoystick(float x, float y){
         if(getHolder().getSurface().isValid()){
@@ -65,12 +64,13 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
             Canvas can = this.getHolder().lockCanvas();
             Paint paint_color = new Paint();
             //clear canvas
-            can.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-            paint_color.setARGB(255, 50, 50, 50);
+            can.drawColor(Color.WHITE);
+            //can.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+            paint_color.setARGB(255, 150, 150, 150);
             //draw the circle
             can.drawCircle(xCen, yCen, radiusBase, paint_color);
             //draw the knob
-            paint_color.setARGB(250, 18, 108, 179);
+            paint_color.setARGB(255, 120, 0, 120);
             can.drawCircle(x, y, radiusH, paint_color);
             //show the drawing to user
             getHolder().unlockCanvasAndPost(can);
@@ -125,15 +125,5 @@ public class Joystick extends SurfaceView implements SurfaceHolder.Callback, Vie
         return true;
     }
 
-    public float getxCen() {
-        return xCen;
-    }
 
-    public float getyCen() {
-        return yCen;
-    }
-
-    public float getRadiusBase() {
-        return radiusBase;
-    }
 }
