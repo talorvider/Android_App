@@ -36,11 +36,11 @@
 
         <Button
                 android:layout_width="116dp"
-                android:layout_height="8dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:text="@string/connect"
-                android:background="@color/purple_200"
+                android:backgroundTint="@color/purple_200"
                 android:onClick="@{() -> viewmodel.serverConn()}"
         />
 
