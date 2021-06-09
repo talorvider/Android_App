@@ -10,9 +10,6 @@ public class FGModel {
     private ExecutorService pool;
     private Socket fg;
     private PrintWriter out;
-    private float xCen;
-    private float yCen;
-    private float bRad;
 
     public FGModel() {
         //initialize the thread pool
@@ -22,19 +19,18 @@ public class FGModel {
     //content to server
     public void connectFG(String ip, int port) throws IOException {
         pool.execute(new Connect(ip, port,fg, out));
-
     }
 
-    public void calcElevator(double e){
+    public void calcElevator(double e, float yCen, float bRad){
         String task_str = "elevator";
-        double corr_elevator = e/bRad - yCen;
-        pool.execute(new Task(task_str, corr_elevator, out));
+        double corr_elevator = (yCen - e)/bRad;
+        //pool.execute(new Task(task_str, corr_elevator, out));
     }
 
     public void calcAileron(double a, float xCen, float bRad) {
         String task_str = "aileron";
-        double corr_aileron = a/bRad - xCen;
-        pool.execute(new Task(task_str, corr_aileron, out));
+        double corr_aileron = (a - xCen)/bRad;
+        //pool.execute(new Task(task_str, corr_aileron, out));
     }
 }
 

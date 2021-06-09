@@ -54,7 +54,7 @@ public class Viewmodel extends BaseObservable {
     }
 
     public void setElevator(double e) {
-        model.calcElevator(e);
+        model.calcElevator(e,yCen, bRad);
     }
 
     public void setbRad(float bRad) {
