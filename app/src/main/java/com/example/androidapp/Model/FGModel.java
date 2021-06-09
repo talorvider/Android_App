@@ -14,23 +14,30 @@ public class FGModel {
     public FGModel() {
         //initialize the thread pool
         pool = Executors.newSingleThreadExecutor();
+
     }
 
     //content to server
     public void connectFG(String ip, int port) throws IOException {
-        pool.execute(new Connect(ip, port,fg, out));
+        Connect c = new Connect(ip, port,fg, out, this);
+        pool.execute(c);
+
     }
 
     public void calcElevator(double e, float yCen, float bRad){
         String task_str = "elevator";
         double corr_elevator = (yCen - e)/bRad;
-        //pool.execute(new Task(task_str, corr_elevator, out));
+        pool.execute(new Task(task_str, corr_elevator, out));
     }
 
     public void calcAileron(double a, float xCen, float bRad) {
         String task_str = "aileron";
         double corr_aileron = (a - xCen)/bRad;
-        //pool.execute(new Task(task_str, corr_aileron, out));
+        pool.execute(new Task(task_str, corr_aileron, out));
+    }
+
+    public void setOut(PrintWriter out) {
+        this.out = out;
     }
 }
 
