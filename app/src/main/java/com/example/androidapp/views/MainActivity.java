@@ -3,6 +3,7 @@ package com.example.androidapp.views;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
@@ -15,6 +16,9 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
     private Viewmodel vm;
     private Joystick js;
     private ActivityMainBinding binding;
+    private SeekBar rudder_sb;
+    private SeekBar throttle_sb;
+
 
 
     @Override
@@ -25,8 +29,48 @@ public class MainActivity extends AppCompatActivity implements Joystick.IJoystik
         vm = new Viewmodel();
         binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setViewmodel(vm);
-        final View view = findViewById(R.id.joystick);
 
+        //create listener for rudder seekBar
+        rudder_sb = (SeekBar)findViewById(R.id.rudder);
+        rudder_sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                vm.setRudder(progress);
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        //create listener for throttle seekBar
+        throttle_sb = (SeekBar)findViewById(R.id.throttle);
+        throttle_sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                vm.setThrottle(progress);
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        final View view = findViewById(R.id.joystick);
         view.post(new Runnable() {
             @Override
             public void run() {

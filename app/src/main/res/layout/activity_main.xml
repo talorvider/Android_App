@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
+        <import type="android.view.View"/>
         <variable
                 name="viewmodel"
                 type="com.example.androidapp.viewModel.Viewmodel" />
     </data>
 
     <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="16dp"
@@ -16,24 +15,24 @@
             android:paddingTop="16dp"
             android:paddingRight="16dp"
             tools:context=".views.MainActivity"
-            android:orientation="vertical">
+            android:orientation="vertical" android:gravity="center">
 
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/ip"
-                    android:layout_weight="1"
-                    android:id="@+id/ip"
-                    android:text="@={viewmodel.ip}"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ip"
+                android:layout_weight="1"
+                android:id="@+id/ip"
+                android:text="@={viewmodel.ip}"/>
 
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/port"
-                    android:layout_weight="1"
-                    android:id="@+id/port"
-                    android:text="@={viewmodel.port}"
-            />
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/port"
+                android:layout_weight="1"
+                android:id="@+id/port"
+                android:text="@={viewmodel.port}"
+        />
 
         <Button
                 android:layout_width="116dp"
@@ -41,14 +40,51 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="@string/connect"
+                android:background="@color/purple_200"
                 android:onClick="@{() -> viewmodel.serverConn()}"
-                />
+        />
 
         <com.example.androidapp.views.Joystick
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:layout_gravity="bottom"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
                 android:id="@+id/joystick"
                 android:layout_weight="1"/>
+        <TextView
+                android:text="Rudder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rudderTxt"
+                android:layout_weight="0.3"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="bottom"
+                android:textAlignment="gravity"/>
+
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rudder"
+                android:layout_weight="1"
+                android:min="-100"
+                android:max="100"
+        />
+        <TextView
+                android:text="Throttle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/throTxt"
+                android:layout_weight="0.3"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+        <SeekBar
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/throttle"
+                android:layout_weight="1"
+                android:max="200"
+        />
     </LinearLayout>
 </layout>
