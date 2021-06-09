@@ -26,18 +26,31 @@ public class FGModel {
 
     public void calcElevator(double e, float yCen, float bRad){
         String task_str = "elevator";
-        double corr_elevator = (yCen - e)/bRad;
-        pool.execute(new Task(task_str, corr_elevator, out));
+        //double corr_elevator = (yCen - e)/bRad;
+        pool.execute(new Task(task_str, e, out, yCen, bRad));
     }
 
     public void calcAileron(double a, float xCen, float bRad) {
         String task_str = "aileron";
-        double corr_aileron = (a - xCen)/bRad;
-        pool.execute(new Task(task_str, corr_aileron, out));
+        //double corr_aileron = (a - xCen)/bRad;
+        pool.execute(new Task(task_str, a, out, xCen, bRad));
     }
 
     public void setOut(PrintWriter out) {
         this.out = out;
+    }
+
+    public void updateRudder(int rudder) {
+        String task_str = "rudder";
+        //double corr_rudder = (double)rudder/100;
+        pool.execute(new Task(task_str, rudder, out, 0, 0));
+
+    }
+
+    public void updateThrottle(int throttle) {
+        String task_str = "throttle";
+        //double corr_throttle = (double)throttle/200;
+        pool.execute(new Task(task_str, throttle, out,0,0));
     }
 }
 
