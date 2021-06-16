@@ -23,7 +23,7 @@ After the server runs the plane start to fly.
 
 **View**:
 - **index.html** - this is the client-side view of the server.Using HTML and JavaScript to change and create elemnts in client-side. 
-![enter image description here](https://siliconcanals.com/wp-content/uploads/2019/08/airplane-travel-tip.jpg)
+![image](https://user-images.githubusercontent.com/72921611/122181632-35e9e480-ce92-11eb-90f8-0bfabee577e1.png)
 ## Installation and Running the application
  - **For Developers** - install a proper IDE for Web Application (we used WebStorm but you can use any other software). You will need to install few programs and modules- 
  - [ ] **Node.js** - we worked with 14.17.0 version which you can download here - [Download | Node.js (nodejs.org)](https://nodejs.org/en/download/)
@@ -43,7 +43,7 @@ if it is not, please change it for all things to run smoothly.
  
  upload files and wait until the result get back. Then click on the button that showed up, the result will be displayed in a table. 
 ## Documentation
-Here you can find a Link to UML that contains partial information of the central classes. UML represents the various connections between the classes and the most important information found in each class. UML can be found [here](https://lucid.app/lucidchart/efc80c83-86a0-4a25-b8c5-999e750ff869/view?page=0_0#). 
+Here you can find a Link to UML that contains partial information of the central classes. UML represents the various connections between the classes and the most important information found in each class. UML can be found [here](https://lucid.app/lucidchart/ba91fbd1-3cd6-4dde-a4a0-7f6e889ce981/view). 
 If you are a developer you can find full documentation of functions, variables, and more in the code.
 ## Video
 Here you can find a link to our demo video - [link](https://youtu.be/BbjbQuLcp-E).
