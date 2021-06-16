@@ -27,18 +27,11 @@ After the server runs the plane start to fly.
 
 ![image](https://user-images.githubusercontent.com/72921611/122181632-35e9e480-ce92-11eb-90f8-0bfabee577e1.png)
 ## Installation and Running the application
- - **For Developers** - install a proper IDE for Web Application (we used WebStorm but you can use any other software). You will need to install few programs and modules- 
- - [ ] **Node.js** - we worked with 14.17.0 version which you can download here - [Download | Node.js (nodejs.org)](https://nodejs.org/en/download/)
- - [ ] **npm** - install npm from here - [npm | get npm (npmjs.com)](https://www.npmjs.com/get-npm)
- - [ ] **express module** - in the command line (after installed npm) enter - \
-  `$ npm install express --save` \
- for more information enter [here](https://expressjs.com/en/starter/installing.html).
- - [ ]  **express-fileupload module** - in the command line (after installed npm) enter  -\
-  `$ npm i express-fileupload`\
-  for more information enter [here](https://www.npmjs.com/package/express-fileupload).
- - [ ]  **Working Directory** - Make sure your working directory is set to -\
-` ~\webapplication\Controller`\
-if it is not, please change it for all things to run smoothly.
+ - **For Developers** - install a proper IDE for android Application (we used intellij but you can use any other software). You migth need to install JDK- 
+ - [ ] **JDK** - If the JDK is installed on your computer, but not defined in the IDE, select Add JDK and specify the path to the JDK home directory.
+  else - if you don't have the necessary JDK on your computer, select Download JDK.
+  - [ ] **Android device** - you can choose to run the app from your Android device or to download Android device simulator to your computer. 
+ 
  - **For Users** -
  Run the app and make sure that FG server is running - 
  - [ ] insert the next line to FG settings :
