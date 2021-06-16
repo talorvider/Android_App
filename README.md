@@ -3,7 +3,8 @@
 
 # Android Application
 ### Preview from Application
-![enter image description here](https://i.ibb.co/BPNBQMD/anoamlywebserver.png)
+![image](https://user-images.githubusercontent.com/72921611/122180386-0e464c80-ce91-11eb-890a-e3d513ba96be.png)
+
 
 Our app is made especially for pilots and flight researchers that want to practice flying. 
 At first the user enters the ip and port to connect to the simulator flight server
