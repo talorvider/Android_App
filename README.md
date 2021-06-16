@@ -1,13 +1,15 @@
 # 
 
 
-# Android Aplication
-### Preview from Website
+# Android Application
+### Preview from Application
 ![enter image description here](https://i.ibb.co/BPNBQMD/anoamlywebserver.png)
-Our Website is made especially for pilots and flight researchers that want to explore flight data. 
-Users can upload regular flight CSV (uses for learning the data and correlation) and another data flight CSV that we want to check for anomalies.  
-The CSV files are upload to the server, and the user gets an alert when the server got the files.\
-After the server runs the algorithm to learn & detect and results are ready, the user will get an alert and can display a table with anomalies that were detected. 
+
+Our app is made especially for pilots and flight researchers that want to practice flying. 
+At first the user enters the ip and port to connect to the simulator flight server
+Users can control the plane with the joystick and seek bar simulation, 
+Each touch on the screen causes the app to send new flight values to the server.
+After the server runs the plane start to fly. 
 ## Directory hierarchy
 
 **Model**:
