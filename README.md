@@ -13,13 +13,12 @@ After the server runs the plane start to fly.
 ## Directory hierarchy
 
 **Model**:
- - **Connect**- Opening a connection with the server in a separate thread, the IP and port arguments are given by the user.\
- - **Task** - Puts a new task in the Thread tasks queue, the task contains a command with a new value to one of the flight values, according to the movement of the joystick.\
- - **FGModel** -  using to learn data and detect anomalies using regression algorithm.
- - 
-
- **Controller**:
-- **expServer.js** - server itself. using express node.js module for the server. Handling HTTP GET '/' request and POST '/detect' request. 
+ - **Connect**- Opening a connection with the server in a separate thread, the IP and port arguments are given by the user.
+ - **Task** - Puts a new task in the Thread tasks queue, the task contains a command with a new value to one of the flight values, according to the movement of the joystick.
+ - **FGModel** - Creates a Single-Thread pool that is responsible for running tasks that are in the queue. In addition the model puts the various tasks in the queue.
+ 
+ **viewModel**:
+- **Viewmodel** - Manages the requests received from the view and sends to the functions in the model. 
 
 **View**:
 - **index.html** - this is the client-side view of the server.Using HTML and JavaScript to change and create elemnts in client-side. 
