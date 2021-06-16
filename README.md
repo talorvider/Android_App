@@ -20,8 +20,11 @@ After the server runs the plane start to fly.
  **viewModel**:
 - **Viewmodel** - Manages the requests received from the view and sends to the functions in the model. 
 
-**View**:
-- **index.html** - this is the client-side view of the server.Using HTML and JavaScript to change and create elemnts in client-side. 
+**Views**:
+- **Jostick** - Contains functions that create and draw the Jostick. 
+- **MainActivity** - Creates the display surface for the app. 
+- **ativity_main.xml** - The XML file of the view, contains the various features that will be on the screen. 
+
 ![image](https://user-images.githubusercontent.com/72921611/122181632-35e9e480-ce92-11eb-90f8-0bfabee577e1.png)
 ## Installation and Running the application
  - **For Developers** - install a proper IDE for Web Application (we used WebStorm but you can use any other software). You will need to install few programs and modules- 
