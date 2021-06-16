@@ -3,8 +3,7 @@
 
 # Android Application
 ### Preview from Application
-![image](https://user-images.githubusercontent.com/72921611/122180386-0e464c80-ce91-11eb-890a-e3d513ba96be.png)
-
+![image](https://user-images.githubusercontent.com/72921611/122181129-bfe57d80-ce91-11eb-98de-e317eafdbf4e.png)
 
 Our app is made especially for pilots and flight researchers that want to practice flying. 
 At first the user enters the ip and port to connect to the simulator flight server
