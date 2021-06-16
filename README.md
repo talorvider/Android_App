@@ -1,7 +1,7 @@
 # 
 
 
-# Web Anomaly Server
+# Android Aplication
 ### Preview from Website
 ![enter image description here](https://i.ibb.co/BPNBQMD/anoamlywebserver.png)
 Our Website is made especially for pilots and flight researchers that want to explore flight data. 
