@@ -17,13 +17,10 @@ public class Viewmodel extends BaseObservable {
     private String ip;
     private String port;
     private FGModel model;
-    private MainActivity view;
-    private boolean visib;
 
-
+    // the constructor.
     public Viewmodel() {
         model = new FGModel();
-        visib = false;
     }
 
     public void setIp(String ip) {
@@ -42,9 +39,9 @@ public class Viewmodel extends BaseObservable {
         return port;
     }
 
+    // this function is called when the connect button is pressed.
     public void serverConn() {
         try {
-            //setVisib(true);
             //get port and ip from user
             int portInt = Integer.parseInt(port);
             model.connectFG(ip, portInt);
@@ -55,9 +52,7 @@ public class Viewmodel extends BaseObservable {
     }
 
     public void setAileron(double a){
-
         model.calcAileron(a, xCen, bRad);
-
     }
 
     public void setElevator(double e) {
@@ -84,14 +79,5 @@ public class Viewmodel extends BaseObservable {
         model.updateThrottle(throttle);
     }
 
-    @Bindable
-    public  boolean getVisib(){
-        return visib;
-    }
-    @Bindable
-    public void setVisib(boolean vis){
-        visib = vis;
-        notifyPropertyChanged(BR._all);
 
-    }
 }
