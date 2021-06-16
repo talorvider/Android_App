@@ -40,10 +40,13 @@ After the server runs the plane start to fly.
 ` ~\webapplication\Controller`\
 if it is not, please change it for all things to run smoothly.
  - **For Users** -
- Make sure that server is running and browse  to - 
- >  http://localhost:8080/
+ Run the app and make sure that FG server is running - 
+ - [ ] insert the next line to FG settings :
+  --telnet=socket,in,10,127.0.0.1,6400,tcp
+ - [ ] In the app insert port 6400, and your computer ip and press connect button.
+ - [ ] to start the engine press cessna C172P in tool bar | Autostart and start flying.
  
- upload files and wait until the result get back. Then click on the button that showed up, the result will be displayed in a table. 
+ 
 ## Documentation
 Here you can find a Link to UML that contains partial information of the central classes. UML represents the various connections between the classes and the most important information found in each class. UML can be found [here](https://lucid.app/lucidchart/ba91fbd1-3cd6-4dde-a4a0-7f6e889ce981/view). 
 If you are a developer you can find full documentation of functions, variables, and more in the code.
