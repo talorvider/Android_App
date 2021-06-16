@@ -30,7 +30,8 @@ After the server runs the plane start to fly.
  - **For Developers** - install a proper IDE for android Application (we used intellij but you can use any other software). You migth need to install JDK- 
  - [ ] **JDK** - If the JDK is installed on your computer, but not defined in the IDE, select Add JDK and specify the path to the JDK home directory.
   else - if you don't have the necessary JDK on your computer, select Download JDK.
-  - [ ] **Android device** - you can choose to run the app from your Android device or to download Android device simulator to your computer. 
+  - [ ] **Android device** - you can choose to run the app from your Android device or to download Android device simulator to your computer.
+  - [ ]  in order to run this app you need to check that you have the file local.properties, if you don't have it you need to create one with this line:              sdk.dir=C\:\\Users\\"your_user_name"\\AppData\\Local\\Android\\Sdk
  
  - **For Users** -
  Run the app and make sure that FG server is running - 
@@ -44,4 +45,4 @@ After the server runs the plane start to fly.
 Here you can find a Link to UML that contains partial information of the central classes. UML represents the various connections between the classes and the most important information found in each class. UML can be found [here](https://lucid.app/lucidchart/ba91fbd1-3cd6-4dde-a4a0-7f6e889ce981/view). 
 If you are a developer you can find full documentation of functions, variables, and more in the code.
 ## Video
-Here you can find a link to our demo video - [link](https://youtu.be/BbjbQuLcp-E).
+Here you can find a link to our demo video - [link](https://youtu.be/Og_7GWVDat4).
